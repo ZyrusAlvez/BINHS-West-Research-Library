@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import upload from "./middleware/upload.mjs";
+import researchRouter from "./routes/researchRoute.mjs";
 
 dotenv.config();
 
@@ -12,6 +12,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/api/research", researchRouter)
 
 mongoose
   .connect(DATABASE)
@@ -26,23 +28,18 @@ mongoose
     console.log("Database connection error:", error);
   });
 
-// Connect to MongoDB GridFS bucket using mongoose
-let bucket;
-(() => {
-  mongoose.connection.on("connected", () => {
-    bucket = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
-      bucketName: "uploads",
-    });
-  });
-})();
 
-app.post("/upload/file", upload().single("file"), async (req, res) => {
-  try {
-    res.status(201).json({ file: req.file });
-  } catch (error) {
-    console.log(error);
-    res.status(400).json({
-      error: { text: "Unable to upload the file", error },
-    });
-  }
-});
+
+
+
+
+
+// Connect to MongoDB GridFS bucket using mongoose
+// let bucket;
+// (() => {
+//   mongoose.connection.on("connected", () => {
+//     bucket = new mongoose.mongo.GridFSBucket(mongoose.connection.db, {
+//       bucketName: "uploads",
+//     });
+//   });
+// })();
