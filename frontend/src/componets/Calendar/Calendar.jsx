@@ -26,7 +26,7 @@ const Calendar = () => {
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 z-50">
       <FaLessThan className="text-4xl cursor-pointer text-yellow-700" onClick={prev}/>
       <Model month={month} year={year}/>
       <FaGreaterThan className="text-4xl cursor-pointer text-yellow-700" onClick={next}/>

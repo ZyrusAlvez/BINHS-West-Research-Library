@@ -21,7 +21,7 @@ const Model = ({month, year}) => {
   }
 
   return (
-    <div className="w-[250px] bg-orange-100 z-10 rounded-2xl pb-4">
+    <div className="w-[250px] bg-orange-100 rounded-2xl pb-4 shadow-2xl">
       <div className="w-full bg-orange-400 rounded-t-2xl">
         <TopDesign />
         <div className="text-orange-100 font-bold flex justify-between px-3 text-2xl mb-2">
@@ -39,11 +39,10 @@ const Model = ({month, year}) => {
         </div>
       </div>
       <div className="text-zinc-500 grid grid-cols-7 mt-2 text-sm font-semibold">
+
         {Array.from({ length: getFirstDayOfMonth(month, year)}, (_, i) => i + 1).map((e) => (
           <h1 key={e}></h1>
         ))}
-
-        
 
         {Array.from({ length: daysInMonth }, (_, i) => i + 1).map((e) => (
           <h1
@@ -61,6 +60,7 @@ const Model = ({month, year}) => {
             {e}
           </h1>
         ))}
+
       </div>
     </div>
   );
