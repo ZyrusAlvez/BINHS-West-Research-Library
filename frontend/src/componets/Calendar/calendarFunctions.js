@@ -30,7 +30,7 @@ export function getMonthName(monthNumber){
 };
 
 
-export function getFirstDayOfMonth(year, month){
+export function getFirstDayOfMonth(month, year){
   // Create a new Date object for the 1st day of the month
   const firstDay = new Date(year, month - 1, 1); // month - 1 because months are zero-indexed
 
