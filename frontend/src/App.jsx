@@ -5,6 +5,7 @@ import News from "./pages/News";
 import Research from "./pages/Research"
 import Academics from "./pages/Academics";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About"
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: '/academics',  
     element: <Academics />
+  },
+  {
+    path : '/about',
+    element: <About />
   },
   {
     path: '*',
