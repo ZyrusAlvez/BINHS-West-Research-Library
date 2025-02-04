@@ -5,8 +5,8 @@ import Search from "./Search"
 const Header = () => {
   return (
     <div>
-      <div className="h-[120px] w-full fixed bg-white opacity-50 rounded-b-lg"></div>
-      <div className='h-[120px] w-full fixed flex items-center justify-between pl-4'>
+      <div className="w-full fixed h-[120px]"></div>
+      <div className="w-full fixed flex items-center justify-between pl-4 h-[120px]">
         <Title />
         <div className="h-full flex flex-col justify-between">
           <Navigation />
